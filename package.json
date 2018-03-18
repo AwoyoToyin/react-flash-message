@@ -11,12 +11,11 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "webpack --mode development --watch",
-    "build": "webpack --mode production",
+    "start": "NODE_ENV=development webpack-dev-server --watch --hot --inline",
+    "build": "NODE_ENV=production webpack",
     "test": "jest",
     "lint": "eslint --ext .js --ext .jsx src --fix",
-    "prettier": "prettier --trailing-comma es5 --single-quote --write 'src/**/*.{js,jsx}'",
-    "precommit": "lint-staged"
+    "prettier": "prettier --trailing-comma es5 --single-quote --write 'src/**/*.{js,jsx}'"
   },
   "lint-staged": {
     "linters": {
@@ -44,7 +43,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "extract-text-webpack-plugin": "^3.0.2",
-    "html-webpack-plugin": "webpack-contrib/html-webpack-plugin",
+    "html-webpack-plugin": "^3",
     "husky": "^0.14.3",
     "jest": "^22.4.2",
     "lint-staged": "^7.0.0",
