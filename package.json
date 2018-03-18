@@ -15,15 +15,12 @@
     "build": "NODE_ENV=production webpack",
     "test": "jest",
     "lint": "eslint --ext .js --ext .jsx src --fix",
-    "prettier": "prettier --trailing-comma es5 --single-quote --write 'src/**/*.{js,jsx}'"
+    "prettier": "prettier --trailing-comma es5 --single-quote --write 'src/**/*.{js,jsx}'",
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "linters": {
-      "*.{js,jsx}": [
-        "yarn prettier",
-        "yarn lint",
-        "git add"
-      ]
+      "*.{js,jsx}": ["yarn prettier", "yarn lint", "git add"]
     }
   },
   "devDependencies": {
